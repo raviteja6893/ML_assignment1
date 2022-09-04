@@ -1,0 +1,224 @@
+#question no 1
+
+import math
+ages = [19,22,19,24,20,25,26,24,25,24]
+#using sort function to get the ages in sorted order
+ages.sort()
+print("after sorting the ages ",ages)
+# using min and max functions to get the min and max ages
+minimum_age = min(ages)
+maximum_age = max(ages)
+print("Minimum age is",minimum_age)
+print("Maximum age is",maximum_age)
+#appending min and max ages to the ages
+ages.append(minimum_age)
+ages.append(maximum_age)
+print("final list after adding minimum and maximum ages", ages)
+ages.sort()
+length_of_list = len(ages)
+#calculating median of the ages
+if length_of_list%2==0:
+    median_age = (ages[int(length_of_list/2)] + ages[int((length_of_list-1)/2)])/2
+else:
+    median_age =  ages[int((length_of_list-1)/2)]
+print("Median age is", median_age)
+average_age = sum(ages)/length_of_list
+print("average age is", average_age) 
+range_of_ages = maximum_age - minimum_age
+print("range of ages is", range_of_ages)  
+
+#question no 2
+
+#creating an empty dictionary
+dog = {}
+print("dog = ", dog)
+#adding name, color, breed, legs and age to the dog dictionary.
+dog["name"] = "doberman"
+dog["color"] = "black"
+dog["breed"] = "fawn"
+dog["legs"]  = 4
+dog["age"] = 6
+print("dog = ", dog)
+#creating empty student dictionary
+student = {}
+#adding fist_name, last_name, gender, age, marital_status, skills, country, city and address to the student dictionary.
+student["first_name"] = "ravi"
+student["last_name"] = "teja"
+student["gender"] = "Male"
+student["age"] = 25
+student["marital_status"] = "single"
+student["skills"] = ["c","c++","java","reactJS","springMVC"]
+student["country"] = "USA"
+student["city"] = "san jose"
+student["address"] = "617 lakeside dr CA"
+print("no of students = ", len(student))#finding no of students
+print("skills = ", student["skills"])#getting skills of student
+print("datatype of skills = ", type(student["skills"]))#getting student skills type
+student["skills"].append("angular")#appending the angular skill to the skills of student.
+print("skills = ", student["skills"])
+print("dictionary keys as a list = ", list(student.keys()))#printing dictionary keys as a list
+print("dictionary values as a list = ", list(student.values()))#printing dictionary values as a list.
+
+#question no 3
+
+#crating sisters and brothers tuples with names
+sisters = ("lakshmi", "pooja", "pallavi", "tejaswi")
+brothers = ("kumar", "harsha", "dileep", "vineeth")
+print("sisters = ", sisters)
+print("brothers = ", brothers)
+#concatenating sisters and brothers tuples and assigning to siblings.
+siblings = sisters + brothers
+#finding total no of siblings
+print("siblings = ", siblings)
+no_of_siblings = len(siblings)
+print("no_of_siblings = ",no_of_siblings)
+#adding parents to siblings and assigning to family_members.
+siblings+=("kranthi", "madhavi")
+family_members = siblings
+print("family_members = ", family_members)
+
+#question no 4
+
+it_companies = {"facebook", "google", "microsoft", "apple", "IBM", "oracle", "amazon"}
+A = {19, 22, 24, 20, 25, 26}
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+age = [22, 19, 24,25, 26, 24, 25, 24]
+#finding total no of it companies.
+no_of_it_companies = len(it_companies)
+print("no_of_it_companies = ", no_of_it_companies)
+#adding square to it companies.
+it_companies.add("square")
+print("set of it_companies after adding square:", it_companies)
+#adding multiple companies to the it companies.
+it_companies.update(["Netflix", "tiktok", "infosys", "linkedin"])
+print("current set of it companies : ", it_companies)
+#removing infosys from the it companies.
+it_companies.remove("infosys")
+print("after removing infosys = ", it_companies)
+#joining sets A and B.
+print("after joining the sets A and B: ", A.union(B))
+#finding A intersection of B.
+print("A intersection B: ", A.intersection(B))
+#checking whether A is subset of B.
+print("is A subset of B: ", A.issubset(B))
+#checking whether A is disjoint of B.
+print("are A and B disjoint sets : ", A.isdisjoint(B))
+A.update(B)#joining A with B.
+print("joining A with B : ", A)
+B.update(A)#joining B with A.
+print("joining B with A:  ", A)
+A = {19,22,24,20,25,26}
+B = {19,22,20,25,26,24,28,27}
+#finding symmetric diff btw A and B.
+print("symmetric diff btw A and B: ", A.symmetric_difference(B))
+#deleting sets it companies, A and B.
+it_companies.clear()
+A.clear()
+B.clear()
+#converting ages list to set and then finding length of list before converting and length of set after converting.
+age_set = set(age)
+print("type of age set : ", type(age_set))
+print("length of age_list = ", len(age), "and length of age_set = ", len(age_set))
+
+#question no 5
+#taking radius as user input
+radius = int(input("Enter radius of the circle :", ))
+#finding area and circumference of the circle.
+area_of_circle = 3.14*(radius**2)
+print("area of the circle with radius", radius, "is : ", area_of_circle)
+circumference_of_circle = 2*3.14*radius
+print("circumference of the circle with radius ", radius, " is :", circumference_of_circle)
+
+#question no 6
+#splitting the sentence by white spaces using split function 
+split_sentence = "I am a teacher and I love to inspire and teach people".split()
+#finding the set of unique words by pushing the split_sentence since the set contains no duplicate objects.
+set_of_unique_words = set(split_sentence)
+print("set of unique words in the statement:", set_of_unique_words)
+#finding count of unique words in the sentence.
+count_of_unique_words = len(set_of_unique_words)
+print("count of unique words in the sentence :", count_of_unique_words)
+
+#question no 7
+# we get the desired output by using \t(giving tab space) and \n(moving to next line) whenever needed. 
+print("Name\t\t    Age\t    Country\t   City \nAsabeneh\t   t250\t    Finland\t Helsinki")
+
+#question no 8
+#printintg the radius and area of the circle using string format function.
+radius = 10
+area = 3.14*radius**2
+print("area of the circle with radius {} is {} sq.meters".format(radius,int(area)))
+
+#question no 9
+#taking user input for no of students
+N = int(input("Enter no of students : "))
+#creating empty list for weights in kgs and in lbs.
+weights_in_lbs = []
+weights_in_kgs = []
+#taking user weight input and appending in corresponding forn of list. 
+for student in range(N):
+    weights_in_lbs.append(int(input("Enter weigth of "+str(student+1)+": ")))
+    weights_in_kgs.append(round(weights_in_lbs[student]*0.45359237,2))
+print("Weights in lbs :", weights_in_lbs)
+print("Weights in kgs :", weights_in_kgs)
+
+#question no 10
+
+
+import random
+first_class = "O"
+second_class = "X"
+given_features = [(1,first_class),(2,first_class),(3,second_class),(6,second_class),(6,second_class),(7,first_class),(10,first_class),(11,first_class)]
+k = 3
+random.shuffle(given_features)
+length  = len(given_features)
+train_data = given_features[:length//2]
+test_data = given_features[length//2:]
+print(train_data,test_data)
+res = []
+dist = []
+for Feature,Class in test_data:
+    dist = []
+    for F,C in train_data:
+        dist.append((abs(Feature-F),C))
+    KNN = sorted(dist)[:k]
+    no_of_X = 0
+    no_of_O = 0
+    for _, Cls in KNN:
+        if Cls==second_class:
+            no_of_X+=1
+        else:
+            no_of_O+=1
+    if no_of_X > no_of_O:
+        res.append((Feature,second_class))
+    else:
+        res.append((Feature,first_class))
+print(res)
+TP = 0
+FP = 0
+TN = 0
+FN = 0
+for x in range(len(res)):
+    if res[x][1]=="O":
+        if res[x][1]==test_data[x][1]:
+            TP+=1
+        else:
+            FP+=1
+    elif res[x][1]=="X":
+        if res[x][1]==test_data[x][1]:
+            TN+=1
+        else:
+            FN+=1
+print("TP :", TP)
+print("FP :", FP)
+print("TN :", TN)
+print("FN :", FN)
+
+con_mtrx = [[TP,FN],[FP,TN]]
+print("confusion matrix: ", con_mtrx)
+accuracy = (TP+TN)/(TP+TN+FP+FN)
+sensitivity = TP/(TP+FN)
+specificity = TN/(TN+FP)
+print("accuracy :", accuracy)
+print("sensitivity :", sensitivity)
+print("specificity : ", specificity)
